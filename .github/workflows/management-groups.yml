@@ -18,4 +18,4 @@ jobs:
         azcliversion: 2.33.0
         inlineScript: |
             az account show
-            az deployment tenant what-if --template-file ./infra-as-code/bicep/modules/managementGroups/managementGroups.bicep --parameters ./infra-as-code/bicep/modules/managementGroups/managementGroups.parameters.example.json --location eastus
+            az deployment tenant what-if --template-file infra-as-code/bicep/modules/managementGroups/managementGroups.bicep --parameters infra-as-code/bicep/modules/managementGroups/managementGroups.parameters.example.json --location eastus

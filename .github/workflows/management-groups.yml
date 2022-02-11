@@ -21,3 +21,13 @@ jobs:
             pwd
             ls
             az deployment tenant what-if --template-file infra-as-code/bicep/modules/managementGroups/managementGroups.bicep --parameters infra-as-code/bicep/modules/managementGroups/managementGroups.parameters.example.json --location eastus
+
+    - uses: azure/CLI@v1
+      if: github.ref == 'refs/heads/main' && github.event.pull_request.merged == true
+      with:
+        azcliversion: 2.33.0
+        inlineScript: |
+            az account show
+            pwd
+            ls
+            az deployment tenant what-if --template-file infra-as-code/bicep/modules/managementGroups/managementGroups.bicep --parameters infra-as-code/bicep/modules/managementGroups/managementGroups.parameters.example.json --location eastus

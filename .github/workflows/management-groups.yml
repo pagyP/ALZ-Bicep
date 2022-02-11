@@ -20,4 +20,7 @@ jobs:
             az account show
             pwd
             ls
+            cd repo
+            pwd
+            ls
             az deployment tenant what-if --template-file ALZ-Bicep/infra-as-code/bicep/modules/managementGroups/managementGroups.bicep --parameters ALZ-Bicep/infra-as-code/bicep/modules/managementGroups/managementGroups.parameters.example.json --location eastus
